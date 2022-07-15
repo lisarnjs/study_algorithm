@@ -25,7 +25,7 @@ const aa = (str) => {
   let name = "";
   for (key in obj) {
     if (obj[key] > max) {
-      max = obj[key];
+      max = obj[key]; 
       name = key;
     }
   }
