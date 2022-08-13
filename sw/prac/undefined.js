@@ -18,10 +18,10 @@ const object3 = {
 };
 
 const safeGet = (obj, str) => {
-  const splitStr = typeof str === "string" ? str.split(".") : str;
+  const splitStr = String.prototype.split.call(str, ".");
   if (splitStr.length === 1) return obj[splitStr[0]];
   const [zeroStr, ...elseStr] = splitStr;
   return safeGet(obj[zeroStr], elseStr);
 };
 
-console.log(safeGet(object3, "repo.read.extend"));
+console.log(safeGet(object2, "repo.read"));
